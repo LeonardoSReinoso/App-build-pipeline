@@ -47,7 +47,8 @@ jobs:
 
   deploy:
         permissions:
-            contents: none
+            contents: read
+            issues: write
         runs-on: ubuntu-latest
         environment: poc
         needs: build
@@ -72,5 +73,12 @@ jobs:
 
           - name: Deploy app
             run: |
-                    echo "READT to execute #python SampleApp.py"
+                    echo "READy to execute #python SampleApp.py"
+                    echo "READy to execute #python SampleApp.py"
+                    echo "READy to execute #python SampleApp.py"
+                    echo "READy to execute #python SampleApp.py"
+                    echo "READy to execute #python SampleApp.py"
+                    echo "READy to execute #python SampleApp.py"
+                    echo "READy to execute #python SampleApp.py"
+                    
         
