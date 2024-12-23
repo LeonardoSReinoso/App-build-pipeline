@@ -38,7 +38,7 @@ jobs:
         run: |
             mkdir -p build
             cp -r app/SampleApp.py build/
-            # zip -r build/output.zip build/
+            cp requirements.txt build/
 
       - uses: actions/upload-artifact@v4
         with:
