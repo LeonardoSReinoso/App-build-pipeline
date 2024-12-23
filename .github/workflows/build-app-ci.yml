@@ -21,7 +21,7 @@ jobs:
 
       - name: Displa Branch Name
         run: echo running on branch ${GITHUB_REF##*/}
-        
+
       - name: Install dependencies
         run: |
             python -m pip install --upgrade pip
@@ -40,7 +40,7 @@ jobs:
             cp -r app/SampleApp.py build/
             zip -r build/output.zip build/
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
             name: python-build
             path: build/output.zip
