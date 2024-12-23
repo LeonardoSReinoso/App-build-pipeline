@@ -19,6 +19,9 @@ jobs:
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
 
+      - name: Displa Branch Name
+        run: echo running on branch ${GITHUB_REF##*/}
+        
       - name: Install dependencies
         run: |
             python -m pip install --upgrade pip
