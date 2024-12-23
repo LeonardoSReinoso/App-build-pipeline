@@ -1,0 +1,41 @@
+name: PythonDeployPackage-CD-POC
+
+on:
+  workflow_dispatch: 
+  push:
+    branches:
+      - main  # Deploys from Main branch on Push
+ 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Download the previously uploaded artifact
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: python-build
+        path: deployment 
+
+    - name: Extract artifact
+      run: unzip deployment/output.zip -d deployment/
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.12
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r deployment/requirements.txt
+
+    - name: Deploy app
+      run: |
+        cd deployment/
+        python SampleApp.py
