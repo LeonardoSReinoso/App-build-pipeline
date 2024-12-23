@@ -38,28 +38,30 @@ jobs:
         run: |
             mkdir -p build
             cp -r app/SampleApp.py build/
-            zip -r build/output.zip build/
+            # zip -r build/output.zip build/
 
       - uses: actions/upload-artifact@v4
         with:
-            name: python-build
-            path: build/output.zip
-    
-  deployment:
-        runs-on: ubuntu-latest
+            name: python-app
+            path: build
 
+  deploy:
+        permissions:
+            contents: none
+        runs-on: ubuntu-latest
         environment: poc
+        needs: build
 
         steps:
 
           - name: Download artifacts
             uses: actions/download-artifact@v4
             with:
-                name: python-build
-                path: build/output.zip
+                name: python-app
+                path: .
 
-          - name: Extract
-            run: unzip output.zip -d deployment/
+        #   - name: Extract
+        #     run: unzip output.zip -d deployment/
 
           - name: Set up Python
             uses: actions/setup-python@v4
