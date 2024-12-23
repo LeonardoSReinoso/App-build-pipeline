@@ -1,4 +1,4 @@
-name: Python package
+name: PythonBuildPackage-CI-POC
 
 on: 
     workflow_dispatch:  
@@ -26,7 +26,9 @@ jobs:
 
       - name: Run tests
         run: |
-            echo "This is a Test!!"
+            echo "This is a Test 1!!!"
+            echo "This is a Test 2!!!"
+            echo "This is a Test 3!!!"
 
       - name: Archive build output
         if: success()
