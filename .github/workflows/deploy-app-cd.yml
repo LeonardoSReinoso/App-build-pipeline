@@ -1,11 +1,11 @@
-name: Deploy Python Artifact
+name: PythonDeployPackage-CD-POC
 
 on:
   workflow_dispatch: 
   push:
     branches:
-      - main  # Only deploys from Main branch on Push
-
+      - main  # Deploys from Main branch on Push
+ 
 jobs:
   deploy:
     runs-on: ubuntu-latest
