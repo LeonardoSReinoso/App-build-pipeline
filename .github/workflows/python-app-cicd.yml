@@ -15,18 +15,16 @@ jobs:
         run: ls -R
   
       - name: Extract zip
-        uses: ./app/task1
+        uses: ihiroky/extract-action@v1
         with:
-          file_path: TASK1.zip
-          extract_dir: task2package
-          verbose: true
+          file_path: ${{ github.workspace }}/app/task1/TASK1.zip
+          extract_dir: task1package
 
       - name: Extract zip
-        uses: ./app/task2
+        uses: ihiroky/extract-action@v1
         with:
-            file_path: TASK2.zip
+            file_path: ${{ github.workspace }}/app/task2/TASK2.zip
             extract_dir: task2package
-            verbose: true
 
       # - name:
       #   run:
