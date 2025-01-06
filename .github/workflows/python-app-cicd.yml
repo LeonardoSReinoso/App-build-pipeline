@@ -14,14 +14,14 @@ jobs:
       - name: Display structure of dirs
         run: ls -R
   
-      - uses: hoatruongdev09/extract-zip-github-action@v1.2
-        with:
-          input-path: './app/task1/task1.zip'
-          output-path: '${{ github.workspace }}/app/task1package'
+      - name:
+        run:
+          unzip ./app/task1/task1.zip
+          unzip ./app/task2/task2.zip
 
       - uses: hoatruongdev09/extract-zip-github-action@v1.2
         with:
-          input-path: './app/task2/task2.zip'
+          input-path: '${{ github.workspace }}/app/task2/task2.zip'
           output-path: '${{ github.workspace }}/app/task2package'
 
       - name: Displa Branch Name
