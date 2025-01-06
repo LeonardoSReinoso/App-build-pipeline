@@ -15,16 +15,16 @@ jobs:
         run: ls -R
   
       - name: Extract zip
-        uses: ./
+        uses: ./app/task1
         with:
-          file_path: ${{ github.workspace }}/app/task1/*.zip
+          file_path: TASK1.zip
           extract_dir: task2package
           verbose: true
 
       - name: Extract zip
-        uses: ./
+        uses: ./app/task2
         with:
-            file_path: ${{ github.workspace }}/app/task1/*.zip
+            file_path: TASK2.zip
             extract_dir: task2package
             verbose: true
 
