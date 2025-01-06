@@ -39,6 +39,7 @@ jobs:
             command: 'compress'
             source: ./task1package
             format: zip
+            includeRoot: false
                   
       - uses: actions/upload-artifact@v4
         with:
