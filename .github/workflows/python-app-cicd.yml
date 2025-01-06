@@ -13,13 +13,13 @@ jobs:
 
       - uses: hoatruongdev09/extract-zip-github-action@v1.2
         with:
-          input-path: "app/task1"
-          output-path: 'task1package/'
+          input-path: "app/task1/"
+          output-path: '.app/task1package'
 
       - uses: hoatruongdev09/extract-zip-github-action@v1.2
         with:
-          input-path: "app/task2"
-          output-path: 'task2package/'
+          input-path: "app/task2/"
+          output-path: '.app/task2package'
 
       - name: Displa Branch Name
         run: echo running on branch ${GITHUB_REF##*/}
