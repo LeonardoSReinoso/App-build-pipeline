@@ -37,14 +37,14 @@ jobs:
         with:
             command: 'compress'
             source: task1package/
-            dest: task1
+            dest: artifact
             format: zip
             includeRoot: false
                   
       - uses: actions/upload-artifact@v4
         with:
             name: zip-file
-            path: task1/task1.zip
+            path: artifact.zip
 
   # deploy:
   #       permissions:
