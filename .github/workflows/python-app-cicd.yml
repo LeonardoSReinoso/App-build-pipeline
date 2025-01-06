@@ -36,7 +36,7 @@ jobs:
       - uses: somaz94/compress-decompress@v1.0.3
         with:
             command: 'compress'
-            source: task1package
+            source: task1
             dest: task1
             format: zip
             includeRoot: false
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
             name: zip-file
-            path: task1
+            path: task1/task1
 
   # deploy:
   #       permissions:
