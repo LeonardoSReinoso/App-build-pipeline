@@ -13,12 +13,12 @@ jobs:
 
       - uses: hoatruongdev09/extract-zip-github-action@v1.2
         with:
-          input-path: "app/task1/"
+          input-path: "app/task1"
           output-path: '${{ github.workspace }}/app/task1package'
 
       - uses: hoatruongdev09/extract-zip-github-action@v1.2
         with:
-          input-path: "app/task2/"
+          input-path: "app/task2"
           output-path: '${{ github.workspace }}/app/task2package'
 
       - name: Displa Branch Name
