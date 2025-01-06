@@ -26,22 +26,12 @@ jobs:
             file_path: ${{ github.workspace }}/app/task2/TASK2.zip
             extract_dir: task2package
 
-      # - name:
-      #   run:
-      #     unzip -c "${{ github.workspace }}/app/task1/*.zip"
-      #     unzip -c "${{ github.workspace }}/app/task2/*.zip"
-
-      # - uses: hoatruongdev09/extract-zip-github-action@v1.2
-      #   with:
-      #     input-path: '${{ github.workspace }}/app/task2/task2.zip'
-      #     output-path: '${{ github.workspace }}/app/task2package'
-
       - name: Displa Branch Name
-        run: echo running on branch ${GITHUB_REF##*/}
+        run: echo running on branch ===> ${GITHUB_REF##*/}
      
       - name: CopyTask2
         run: |
-          cp app/task2package/* app/task1package/
+          cp task2package/* task1package/
 
       - uses: somaz94/compress-decompress@v1.0.3
         with:
