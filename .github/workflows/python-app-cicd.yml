@@ -36,7 +36,7 @@ jobs:
       - uses: somaz94/compress-decompress@v1.0.3
         with:
             command: 'compress'
-            source: task1package/
+            source: task1package
             dest: artifact
             format: zip
             includeRoot: false
