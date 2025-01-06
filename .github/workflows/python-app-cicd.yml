@@ -14,15 +14,29 @@ jobs:
       - name: Display structure of dirs
         run: ls -R
   
-      - name:
-        run:
-          unzip -c "${{ github.workspace }}/app/task1/*.zip"
-          unzip -c "${{ github.workspace }}/app/task2/*.zip"
-
-      - uses: hoatruongdev09/extract-zip-github-action@v1.2
+      - name: Extract zip
+        uses: ./
         with:
-          input-path: '${{ github.workspace }}/app/task2/task2.zip'
-          output-path: '${{ github.workspace }}/app/task2package'
+          file_path: ${{ github.workspace }}/app/task1/*.zip
+          extract_dir: task2package
+          verbose: true
+
+      - name: Extract zip
+        uses: ./
+        with:
+            file_path: ${{ github.workspace }}/app/task1/*.zip
+            extract_dir: task2package
+            verbose: true
+
+      # - name:
+      #   run:
+      #     unzip -c "${{ github.workspace }}/app/task1/*.zip"
+      #     unzip -c "${{ github.workspace }}/app/task2/*.zip"
+
+      # - uses: hoatruongdev09/extract-zip-github-action@v1.2
+      #   with:
+      #     input-path: '${{ github.workspace }}/app/task2/task2.zip'
+      #     output-path: '${{ github.workspace }}/app/task2package'
 
       - name: Displa Branch Name
         run: echo running on branch ${GITHUB_REF##*/}
