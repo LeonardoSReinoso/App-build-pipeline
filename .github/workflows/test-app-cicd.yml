@@ -1,4 +1,4 @@
-name: PythonBuildPackage-CICD-POC
+name: TEST
 
 on: 
     workflow_dispatch:  
