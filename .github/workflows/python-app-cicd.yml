@@ -37,7 +37,7 @@ jobs:
       - uses: somaz94/compress-decompress@v1.0.3
         with:
             command: 'compress'
-            source: ./task1package
+            source: task1package
             format: zip
             includeRoot: false
                   
