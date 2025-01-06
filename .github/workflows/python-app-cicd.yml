@@ -32,19 +32,18 @@ jobs:
       - name: CopyTask2
         run: |
           cp task2package/* task1package/
+          ls -R
 
       - uses: somaz94/compress-decompress@v1.0.3
         with:
             command: 'compress'
-            source: task1package
-            dest: artifact
+            source: ./task1package
             format: zip
-            includeRoot: false
                   
       - uses: actions/upload-artifact@v4
         with:
             name: zip-file
-            path: artifact.zip
+            path: task1package.zip
 
   # deploy:
   #       permissions:
