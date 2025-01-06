@@ -16,8 +16,8 @@ jobs:
   
       - name:
         run:
-          unzip "${{ github.workspace }}/app/task1/task1.zip"
-          unzip "${{ github.workspace }}/app/task2/task2.zip"
+          unzip "${{ github.workspace }}/app/task1/*.zip"
+          unzip "${{ github.workspace }}/app/task2/*.zip"
 
       - uses: hoatruongdev09/extract-zip-github-action@v1.2
         with:
