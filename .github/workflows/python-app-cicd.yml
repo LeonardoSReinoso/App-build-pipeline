@@ -36,15 +36,15 @@ jobs:
       - uses: somaz94/compress-decompress@v1.0.3
         with:
             command: 'compress'
-            source: 'app/task1package'
-            dest: 'task1'
+            source: task1package
+            dest: task1
             format: zip
             includeRoot: false
                   
       - uses: actions/upload-artifact@v4
         with:
             name: zip-file
-            path: task2
+            path: task1
 
   # deploy:
   #       permissions:
